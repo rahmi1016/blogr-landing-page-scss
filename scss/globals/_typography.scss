@@ -1,0 +1,38 @@
+@use "../utils" as u;
+
+:root {
+  /* font-sizes */
+  --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+  --fs-800: 4rem;
+  --fs-700: 2.5rem;
+  --fs-600: 1.5rem;
+  --fs-500: 1.2rem;
+  --fs-400: 1rem;
+  --fs-300: 0.9375rem;
+  --fs-200: 0.875rem;
+  --fs-100: 0.75rem;
+
+  /*  @include u.breakpoint-down(medium)*/
+  /* font-weight */
+  --fw-o-normal: 300;
+  --fw-o-bold: 600;
+  --fw-u-normal: 400;
+  --fw-u-semibold: 500;
+  --fw-u-bold: 700;
+}
+
+a {
+  text-decoration: none;
+}
+.ff-body {
+  font-family: u.$overpass;
+}
+.ff-footer {
+  font-family: u.$ubuntu;
+}
+ul,
+li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}

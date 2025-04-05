@@ -1,0 +1,135 @@
+@use "../utils" as u;
+
+button {
+  cursor: pointer;
+}
+.btn__red {
+  @include u.breakpoint(tiny) {
+    margin-top: u.rem(12);
+    width: u.rem(120);
+    height: u.rem(40);
+    border-radius: u.rem(50);
+    border: none;
+    background-image: linear-gradient(to right, var(--gradient-cta-one), var(--gradient-cta-two));
+    font-size: var(--fs-300);
+    color: var(--text-white);
+    font-weight: var(--fw-u-normal);
+    &:hover {
+      background-image: none;
+      background-color: var(--text-white);
+      color: var(--cta-text);
+      border: 1px solid var(--cta-text);
+    }
+  }
+  @include u.breakpoint(mobile) {
+    width: u.rem(135);
+    height: u.rem(45);
+    margin-top: 0;
+    font-size: var(--fs-400);
+    font-weight: var(--fw-u-semibold);
+    &:hover {
+      background-image: none;
+      background-color: var(--text-white);
+      color: var(--cta-text);
+      border: 1px solid var(--cta-text);
+    }
+  }
+  @include u.breakpoint(tablet) {
+    border: none;
+    background-image: none;
+    background-color: var(--text-white);
+    color: var(--cta-text);
+    margin-top: 0;
+    &:hover {
+      background-color: var(--cta-hover-bg);
+      color: var(--text-white);
+    }
+  }
+}
+
+.horizontal {
+  @include u.breakpoint(tiny) {
+    margin: u.rem(16) 0;
+    height: u.rem(2);
+    width: 100%;
+    border-top: 1px solid var(--text-footer);
+  }
+  @include u.breakpoint(mobile) {
+    margin: u.rem(24) 0;
+    height: u.rem(4);
+  }
+  @include u.breakpoint(tablet) {
+    display: none;
+  }
+}
+
+.hamburger,
+.close {
+  cursor: pointer;
+}
+
+.btn__one {
+  @include u.breakpoint(tiny) {
+    width: u.rem(125);
+    height: u.rem(40);
+    border-radius: u.rem(50);
+    border: none;
+    font-weight: var(--fw-u-semibold);
+    background-color: var(--text-white);
+    color: var(--cta-text);
+    margin-top: 0;
+    font-size: var(--fs-300);
+    &:hover {
+      background-color: var(--cta-hover-bg);
+      color: var(--text-white);
+    }
+  }
+  @include u.breakpoint(mobile) {
+    width: u.rem(135);
+    height: u.rem(45);
+    border-radius: u.rem(50);
+    font-weight: var(--fw-u-bold);
+    font-size: var(--fs-400);
+    &:hover {
+      background-color: var(--cta-hover-bg);
+      color: var(--text-white);
+    }
+  }
+}
+.btn__con {
+  display: flex;
+  flex-direction: row;
+  gap: u.rem(20);
+  justify-content: center;
+  @include u.breakpoint(transit) {
+    gap: u.rem(30);
+  }
+}
+.btn__two {
+  @include u.breakpoint(tiny) {
+    font-weight: var(--fw-u-semibold);
+    text-align: center;
+    width: u.rem(125);
+    height: u.rem(40);
+    border-radius: u.rem(50);
+    border: 1px solid var(--text-white);
+    background-color: transparent;
+    color: var(--text-white);
+    font-size: var(--fs-300);
+    margin-top: 0;
+    &:hover {
+      background-color: var(--text-white);
+      color: var(--cta-text);
+    }
+  }
+  @include u.breakpoint(mobile) {
+    font-weight: var(--fw-u-bold);
+    width: u.rem(135);
+    height: u.rem(45);
+    font-size: var(--fs-400);
+    &:hover {
+      background-color: var(--text-white);
+      color: var(--cta-text);
+    }
+  }
+}

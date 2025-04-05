@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./dist/style.css" />
+    <title>Frontend Mentor | [Blogr]</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__con">
+        <nav class="navbar">
+          <div class="logo__con">
+            <div class="logo"><img src="./images/logo.svg" alt="logo" /></div>
+            <div class="sidebar">
+              <img src="./images/icon-hamburger.svg" alt="icon-hamburger" class="hamburger" id="hamburger" onclick="showMenu()" />
+              <img src="./images/icon-close.svg" alt="icon-close" class="close hidden" id="close" onclick="hideMenu()" />
+            </div>
+          </div>
+          <div class="menu" id="menu">
+            <ul class="menu__con">
+              <li id="product" onclick="toggleProduct()">
+                <div class="menu__items__con">
+                  <span class="menu__items ff-body">Product</span>
+                  <img src="./images/icon-arrow-dark.svg" alt="arrow dark" class="arrow__dark" />
+                  <img src="./images/icon-arrow-light.svg" alt="arrow light" class="arrow__light" />
+                </div>
+                <ul class="menu__subcon hidden" id="subproduct">
+                  <li class="menu__subitems ff-body">Overview</li>
+                  <li class="menu__subitems ff-body">Pricing</li>
+                  <li class="menu__subitems ff-body">Marketplace</li>
+                  <li class="menu__subitems ff-body">Features</li>
+                  <li class="menu__subitems ff-body">Integrations</li>
+                </ul>
+              </li>
+              <li id="company" onclick="toggleCompany()">
+                <div class="menu__items__con">
+                  <span class="menu__items ff-body">Company</span>
+                  <img src="./images/icon-arrow-dark.svg" alt="arrow dark" class="arrow__dark" />
+                  <img src="./images/icon-arrow-light.svg" alt="arrow light" class="arrow__light" />
+                </div>
+                <ul class="menu__subcon hidden" id="subcompany">
+                  <li class="menu__subitems ff-body">About</li>
+                  <li class="menu__subitems ff-body">Team</li>
+                  <li class="menu__subitems ff-body">Blog</li>
+                  <li class="menu__subitems ff-body">Careers</li>
+                </ul>
+              </li>
+              <li id="connect" onclick="toggleConnect()">
+                <div class="menu__items__con">
+                  <span class="menu__items ff-body">Connect</span>
+                  <img src="./images/icon-arrow-dark.svg" alt="arrow dark" class="arrow__dark" />
+                  <img src="./images/icon-arrow-light.svg" alt="arrow light" class="arrow__light" />
+                </div>
+                <ul class="menu__subcon hidden" id="subconnect">
+                  <li class="menu__subitems ff-body">Contact</li>
+                  <li class="menu__subitems ff-body">Newsletter</li>
+                  <li class="menu__subitems ff-body">LinkedIn</li>
+                </ul>
+              </li>
+            </ul>
+            <div class="horizontal"></div>
+            <div class="user__info">
+              <div class="menu__items ff-body">Login</div>
+              <button class="btn__red ff-footer">Sign up</button>
+            </div>
+          </div>
+        </nav>
+        <h1 class="title ff-body">A modern publishing platform</h1>
+        <div class="subtitle ff-body">Grow your audience and build your online brand</div>
+        <div class="btn__con">
+          <button class="btn__one ff-footer">Start for Free</button>
+          <button class="btn__two ff-footer">Learn More</button>
+        </div>
+      </div>
+    </header>
+    <section class="page__one">
+      <div class="container__one">
+        <h2 class="page__one__title ff-body">Designed for the future</h2>
+        <div class="page__one__main">
+          <div class="page__one__image">
+            <img src="./images/illustration-editor-mobile.svg" alt="editor mobile" class="img__mobile" />
+          </div>
+          <div class="page__one__article">
+            <h3 class="page__one__subtitle ff-body">Introducing an extensible editor</h3>
+            <p class="page__one__para ff-body">
+              Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. The editor supports management of
+              multiple blogs and allows easy manipulation of embeds such as images, videos, and Markdown. Extensibility with plugins and themes
+              provide easy ways to add functionality or change the looks of a blog.
+            </p>
+            <h3 class="page__one__subtitle ff-body">Robust content management</h3>
+            <p class="page__one__para ff-body">
+              Flexible content management enables users to easily move through posts. Increase the usability of your blog by adding customized
+              categories, sections, format, or flow. With this functionality, you’re in full control.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="page__two">
+      <div class="container__two">
+        <div class="page__two__image">
+          <img src="./images/illustration-phones.svg" alt="illustration-phones" class="img__phones" />
+        </div>
+        <div class="page__two__article">
+          <h2 class="page__two__title ff-body">State of the Art Infrastructure</h2>
+          <p class="page__two__para ff-body">
+            With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. This ensures your site will
+            load instantly, no matter where your readers are, keeping your site competitive.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="page__three">
+      <div class="container__three">
+        <div class="page__one__image">
+          <img src="./images/illustration-laptop-mobile.svg" alt="illustration-laptop-mobile" class="img__laptop" />
+        </div>
+
+        <div class="page__three__article">
+          <h3 class="page__one__subtitle ff-body">Free, open, simple</h3>
+          <p class="page__one__para ff-body">
+            Blogr is a free and open source application backed by a large community of helpful developers. It supports features such as code syntax
+            highlighting, RSS feeds, social media integration, third-party commenting tools, and works seamlessly with Google Analytics. The
+            architecture is clean and is relatively easy to learn.
+          </p>
+          <h3 class="page__one__subtitle ff-body">Powerful tooling</h3>
+          <p class="page__one__para ff-body">
+            Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but capable of
+            producing even the most complicated sites.
+          </p>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="logo__footer">
+        <img src="./images/logo.svg" alt="logo" />
+      </div>
+      <div class="footer__items__nest">
+        <div class="footer__items__con">
+          <div class="footer__items ff-footer">Product</div>
+          <ul class="footer__subcon">
+            <li class="footer__subitems ff-footer">Overview</li>
+            <li class="footer__subitems ff-footer">Pricing</li>
+            <li class="footer__subitems ff-footer">Marketplace</li>
+            <li class="footer__subitems ff-footer">Features</li>
+            <li class="footer__subitems ff-footer">Integrations</li>
+          </ul>
+        </div>
+        <div class="footer__items__con">
+          <div class="footer__items ff-footer">Company</div>
+          <ul class="footer__subcon">
+            <li class="footer__subitems ff-footer">About</li>
+            <li class="footer__subitems ff-footer">Team</li>
+            <li class="footer__subitems ff-footer">Blog</li>
+            <li class="footer__subitems ff-footer">Careers</li>
+          </ul>
+        </div>
+        <div class="footer__items__con">
+          <div class="footer__items ff-footer">Connect</div>
+          <ul class="footer__subcon">
+            <li class="footer__subitems ff-footer">Contact</li>
+            <li class="footer__subitems ff-footer">Newsletter</li>
+            <li class="footer__subitems ff-footer">LinkedIn</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <div class="attribution ff-body">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
+      <a href="https://www.frontendmentor.io/profile/rahmi1016">Noor Rahmi</a>.
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+:root {
+  // screen width
+  --tiny: 320px;
+  --mobile: 375px;
+  --transit: 750px;
+  --tablet: 1024px;
+  --desktop: 1440px;
+  --pad: 150px;
+  --pad-med: 60px;
+  --pad-small: 20px;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,284 @@
+@use "../utils" as u;
+
+.header__con {
+  @include u.breakpoint(tiny) {
+    position: relative;
+    width: var(--tiny);
+    height: u.rem(400);
+    background-image: url(../images/bg-pattern-intro-mobile.svg), linear-gradient(to bottom, var(--gradient-cta-one), var(--gradient-cta-two));
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: 40% 40%;
+    padding: u.rem(30) u.rem(30);
+    border-bottom-left-radius: 80px;
+  }
+  @include u.breakpoint(mobile) {
+    width: var(--mobile);
+    height: u.rem(600);
+    background-position: 34% 32%;
+    border-bottom-left-radius: 120px;
+  }
+  @include u.breakpoint(transit) {
+    width: var(--transit);
+    padding: var(--pad-med);
+  }
+  @include u.breakpoint(tablet) {
+    background-image: url(../images/bg-pattern-intro-desktop.svg), linear-gradient(to right, var(--gradient-cta-one), var(--gradient-cta-two));
+    background-position: 30% 55%;
+    margin-bottom: 55px;
+    border-bottom-left-radius: 100px;
+    width: var(--tablet);
+    padding: var(--pad-med);
+  }
+  @include u.breakpoint(desktop) {
+    width: var(--desktop);
+    padding: u.rem(60) var(--pad);
+  }
+}
+.logo__con {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: u.rem(24);
+  @include u.breakpoint(tablet) {
+    margin-bottom: 0;
+  }
+}
+.navbar {
+  @include u.breakpoint(tiny) {
+    display: block;
+  }
+  @include u.breakpoint(tablet) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+.sidebar {
+  @include u.breakpoint(tablet) {
+    display: none;
+  }
+}
+
+.arrow__dark {
+  @include u.breakpoint(tiny) {
+    display: inline;
+  }
+  @include u.breakpoint(tablet) {
+    display: none;
+  }
+}
+
+.arrow__light {
+  @include u.breakpoint(tiny) {
+    display: none;
+  }
+  @include u.breakpoint(tablet) {
+    display: inline;
+  }
+}
+.menu {
+  @include u.breakpoint(tiny) {
+    position: absolute;
+    z-index: 3;
+    width: u.rem(260);
+    background-color: var(--text-white);
+    padding: u.rem(22);
+    text-align: center;
+    border-radius: u.rem(4);
+    display: none;
+  }
+  @include u.breakpoint(mobile) {
+    width: u.rem(315);
+  }
+  @include u.breakpoint(transit) {
+    width: u.rem(630);
+    background-color: var(--text-white);
+    padding: u.rem(22);
+    text-align: center;
+    border-radius: u.rem(4);
+    display: none;
+  }
+  @include u.breakpoint(tablet) {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+.menu__con {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  @include u.breakpoint(transit) {
+    text-align: left;
+  }
+  @include u.breakpoint(tablet) {
+    flex-direction: row;
+    gap: u.rem(30);
+    align-items: center;
+  }
+}
+.menu__con span {
+  @include u.breakpoint(tablet) {
+    padding-left: u.rem(30);
+  }
+}
+.menu__items {
+  @include u.breakpoint(tiny) {
+    cursor: pointer;
+    color: var(--text-heading);
+    font-size: var(--fs-400);
+    font-weight: var(--fw-o-bold);
+    line-height: 1.8;
+    &:hover {
+      color: var(--text-body);
+      + img.arrow__dark {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  @include u.breakpoint(mobile) {
+    font-size: var(--fs-500);
+    line-height: 2;
+  }
+  @include u.breakpoint(tablet) {
+    font-size: var(--fs-400);
+    color: var(--text-white);
+    font-weight: var(--fw-o-normal);
+    &:hover {
+      font-weight: var(--fw-o-bold);
+      text-decoration: underline;
+      color: var(--text-white);
+      + img.arrow__dark {
+        transform: rotate(180deg);
+      }
+      ~ img.arrow__light {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+.menu__items__con {
+  @include u.breakpoint(transit) {
+    display: block;
+  }
+}
+.menu__subitems {
+  @include u.breakpoint(tiny) {
+    cursor: pointer;
+    font-size: var(--fs-300);
+  }
+  @include u.breakpoint(mobile) {
+    font-size: var(--fs-400);
+  }
+  @include u.breakpoint(transit) {
+    color: var(--text-body);
+    font-size: var(--fs-500);
+    font-weight: var(--fw-o-bold);
+  }
+  @include u.breakpoint(tablet) {
+    font-size: var(--fs-400);
+    color: var(--footer-bg);
+    font-weight: var(--fw-o-normal);
+    &:hover {
+      font-weight: var(--fw-o-bold);
+    }
+  }
+}
+
+.menu__subcon {
+  @include u.breakpoint(tiny) {
+    background-color: var(--text-footer);
+    text-align: center;
+    border-radius: u.rem(4);
+    line-height: 1.8;
+    padding: u.rem(16);
+    text-align: center;
+    margin: u.rem(12) 0;
+  }
+  @include u.breakpoint(mobile) {
+    line-height: 2;
+    padding: u.rem(24);
+    margin: u.rem(16) 0;
+  }
+
+  @include u.breakpoint(transit) {
+    text-align: left;
+  }
+
+  @include u.breakpoint(tablet) {
+    position: absolute;
+    z-index: 3;
+    background-color: var(--text-white);
+    width: u.rem(164);
+    padding: u.rem(22);
+    line-height: 2;
+    border-radius: u.rem(8);
+    border: none;
+    text-align: left;
+  }
+}
+
+.user__info {
+  @include u.breakpoint(tiny) {
+    display: block;
+  }
+  @include u.breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: u.rem(10);
+    align-items: center;
+  }
+  @include u.breakpoint(transit) {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    gap: 30px;
+    align-items: center;
+  }
+
+  @include u.breakpoint(tablet) {
+    flex-direction: row;
+  }
+}
+
+.title {
+  @include u.breakpoint(tiny) {
+    color: var(--text-white);
+    font-size: 1.6rem;
+    text-align: center;
+    margin-top: u.rem(40);
+  }
+  @include u.breakpoint(mobile) {
+    font-size: var(--fs-700);
+    margin-top: u.rem(60);
+  }
+  @include u.breakpoint(transit) {
+    font-size: var(--fs-800);
+  }
+}
+
+.subtitle {
+  @include u.breakpoint(tiny) {
+    color: var(--text-white);
+    font-size: var(--fs-400);
+    text-align: center;
+    margin-bottom: u.rem(40);
+  }
+
+  @include u.breakpoint(mobile) {
+    color: var(--text-white);
+    font-size: var(--fs-500);
+    text-align: center;
+    margin-bottom: u.rem(60);
+  }
+}
